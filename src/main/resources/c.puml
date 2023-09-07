@@ -1,0 +1,33 @@
+@startuml
+
+class Medico {
+  - id: int
+  - nome: string
+  - especialidade: Especialidade
+  + realizarConsulta(paciente: Paciente): Consulta
+}
+
+class Paciente {
+  - id: int
+  - nome: string
+  + marcarConsulta(medico: Medico): Consulta
+}
+
+class Consulta {
+  - id: int
+  - data: Date
+  - medico: Medico
+  - paciente: Paciente
+}
+
+class Especialidade {
+  - id: int
+  - nome: string
+}
+
+Medico "1" --o "n" Consulta : atende
+Paciente "0..n" --o "1" Consulta : participa
+Medico "1" --o "0..n" Especialidade : tem
+Especialidade "1" --o "0..n" Medico : possui
+
+@enduml
