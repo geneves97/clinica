@@ -1,0 +1,53 @@
+@startuml
+
+class Medico {
+  - id: int
+  - nome: string
+  - crm: int
+  - especialidade_id: Especialidade
+}
+
+class Paciente {
+  - id: int
+  - nome: string
+  - endereco: string
+  - telefone: int
+  - filiacao: string
+  - convenio: string
+  - data_nascimento: date
+  - prontuario_id: Protuario
+}
+
+class Protuario {
+  - id
+  - anamnese
+  - evolucao
+  - solicitacoes
+  - exames
+  - receituario
+  - cid
+  - paciente_id: Paciente
+}
+
+class Consulta {
+  - id: int
+  - data: Date
+  - medico_id: Medico
+  - paciente_id: Paciente
+  - especialidade_id: Especialidade
+}
+
+class Especialidade {
+  - id: int
+  - nome: string
+  - descrição: string
+}
+
+Medico "1" --o "0..n" Consulta : atende
+Paciente "1" --o "0..n" Consulta : participa
+Medico "1" --o "1..n" Especialidade : tem
+Especialidade "1" --o "1..n" Medico : possui
+Consulta "1" --o "1" Especialidade: tem
+Paciente "1" --O "1" Protuario
+
+@enduml
