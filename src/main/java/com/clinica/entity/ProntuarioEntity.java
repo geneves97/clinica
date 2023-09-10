@@ -1,9 +1,6 @@
-package entity;
+package com.clinica.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
-import java.util.List;
 
 
 @Entity(name = "PRONTUARIO")

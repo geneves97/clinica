@@ -1,6 +1,5 @@
-package entity;
+package com.clinica.entity;
 
-import entity.ProntuarioEntity;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;

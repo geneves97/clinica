@@ -1,4 +1,4 @@
-package entity;
+package com.clinica.entity;
 
 import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
