@@ -49,6 +49,71 @@ public class PacienteEntity {
 
     // Getters e setters
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getFiliacao() {
+        return filiacao;
+    }
+
+    public void setFiliacao(String filiacao) {
+        this.filiacao = filiacao;
+    }
+
+    public String getConvenio() {
+        return convenio;
+    }
+
+    public void setConvenio(String convenio) {
+        this.convenio = convenio;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public ProntuarioEntity getProntuario() {
+        return prontuario;
+    }
+
+    public void setProntuario(ProntuarioEntity prontuario) {
+        this.prontuario = prontuario;
+    }
+
+
     // Lógica de formatação de telefone
 
     @Override
