@@ -9,11 +9,12 @@ import java.time.LocalDate;
 public class ConsultaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @SequenceGenerator(name="id")
     @Column(name = "ID")
     Integer id;
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat
     @Column(name = "DATA")
     private LocalDate data;
 
