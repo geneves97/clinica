@@ -22,7 +22,7 @@ class Protuario {
   - id
   - anamnese
   - evolucao
-  - solicitacoes
+  - solicita_exame
   - exames
   - receituario
   - cid
@@ -46,7 +46,7 @@ class Especialidade {
 Medico "1" --o "0..n" Consulta : atende
 Paciente "1" --o "0..n" Consulta : participa
 Medico "1" --o "1..n" Especialidade : tem
-Especialidade "1" --o "1..n" Medico : possui
+
 Consulta "1" --o "1" Especialidade: tem
 Paciente "1" --O "1" Protuario
 
