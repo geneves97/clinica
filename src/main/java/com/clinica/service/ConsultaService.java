@@ -1,28 +1,31 @@
-package com.clinica.rest;
+package com.clinica.service;
 
 import com.clinica.entity.ConsultaEntity;
 import com.clinica.repository.ConsultaRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@RestController
-public class RestConsulta {
+@Service
+public class ConsultaService {
 
     @Autowired
     ConsultaRepository consultaRepository;
 
-    public ConsultaEntity findById(Integer id) {
-        return consultaRepository.findById(id).get();
-    }
-
-    public ConsultaEntity save(ConsultaEntity consultaEntity) throws Exception{
+    public ConsultaEntity saveConsulta(ConsultaEntity consultaEntity) {
         consultaEntity.setData(consultaEntity.getData());
         consultaEntity.setEspecialidade(consultaEntity.getEspecialidade());
         consultaEntity.setMedico(consultaEntity.getMedico());
         consultaEntity.setPaciente(consultaEntity.getPaciente());
         return consultaRepository.save(consultaEntity);
+    }
+
+    public List<ConsultaEntity> findAllConsultas() {
+        return consultaRepository.findAll();
+    }
+    
+    public ConsultaEntity findConsultaById(Integer id) {
+        return consultaRepository.findById(id).get();
     }
 }
