@@ -1,9 +1,11 @@
 package com.clinica.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.util.Objects;
-
+@Data
 @Entity(name = "PACIENTE")
 public class PacienteEntity {
 
@@ -24,33 +26,6 @@ public class PacienteEntity {
         this.nome = nome;
         this.cpf = cpf;
     }
-
-    // Getters e setters
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-
 
     // Lógica de formatação de telefone
 

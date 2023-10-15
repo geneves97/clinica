@@ -1,10 +1,12 @@
 package com.clinica.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
+@Data
 @Entity(name = "CONSULTA")
 public class ConsultaEntity {
 
@@ -30,43 +32,4 @@ public class ConsultaEntity {
     @JoinColumn(name = "ESPECIALIDADE_ID", referencedColumnName = "ID")
     private EspecialidadeEntity especialidade;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
-    public PacienteEntity getMedico() {
-        return medico;
-    }
-
-    public void setMedico(PacienteEntity medico) {
-        this.medico = medico;
-    }
-
-    public PacienteEntity getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(PacienteEntity paciente) {
-        this.paciente = paciente;
-    }
-
-    public EspecialidadeEntity getEspecialidade() {
-        return especialidade;
-    }
-
-    public void setEspecialidade(EspecialidadeEntity especialidade) {
-        this.especialidade = especialidade;
-    }
 }
